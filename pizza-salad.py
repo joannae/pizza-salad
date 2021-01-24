@@ -41,12 +41,10 @@ class Measurements:
 
 @app.route('/')
 def main():
-    # weight = request.args.get('weight')
-    # concentration = request.args.get('concentration')
-    cabbageInGrams=int(sys.argv[1])
-    #cabbageInGrams=int(weight)
-    vinegarEssenceConcentration=float(sys.argv[2])
-    # vinegarEssenceConcentration=float(concentration)
+    weight = request.args.get('weight')
+    concentration = request.args.get('concentration')
+    cabbageInGrams=int(weight)
+    vinegarEssenceConcentration=float(concentration)
 
     proportion= cabbageInGrams/ BaseAmount.CABBAGE_IN_GRAMS
     # Ättiksyra
