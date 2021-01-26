@@ -9,10 +9,10 @@
 # example URL for running with flask locally: http://127.0.0.1:5000/?weight=1000&concentration=0.07
 
 import sys
-from flask import Flask
-from flask import request
+# from flask import Flask
+# from flask import request
 
-app = Flask(__name__)
+# app = Flask(__name__)
 
 class BaseAmount:
    CABBAGE_IN_GRAMS=100
@@ -39,7 +39,7 @@ class Measurements:
           return (amountInMl/Measurements.TSK[1], Measurements.TSK[2])
       return (amountInMl/Measurements.MSK[0], Measurements.MSK[1])
 
-@app.route('/')
+# @app.route('/')
 def main():
     # weight = request.args.get('weight')
     # concentration = request.args.get('concentration')
