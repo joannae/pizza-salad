@@ -1,8 +1,8 @@
 # Converted for the recipe https://www.kokaihop.se/recept/pizzasallad-5
 
 # Running with flask
-# $ python3 -m venv my_env
-# $ source my_env/bin/activate   
+# $ python3 -m venv pizza_env
+# $ source pizza_env/bin/activate   
 # $ export FLASK_APP=pizza-salad
 # $ export FLASK_ENV=development
 # $ flask run
