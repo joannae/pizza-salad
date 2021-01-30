@@ -37,7 +37,7 @@ def getReceipe(weight, concentration):
     vinegarEssenceInGrams=int(aceticAcid/vinegarEssenceConcentration)
     waterInGrams=int(proportion*BaseAmount.VINEGAR_ESSENCE_IN_GRAMS+proportion*BaseAmount.WATER_IN_GRAMS-vinegarEssenceInGrams)
     ingredients={}
-    ingredients["vitkål"]=weight + " gram"
+    ingredients["vitkål"]=weight + " gr"
     ingredients["salt"]=str(proportion*BaseAmount.SALT_IN_ML) + " ml"
     ingredients["socker"]=str(proportion*BaseAmount.SUGER_IN_ML) + " ml"
     ingredients["ättika " + concentration +"% "]=str(vinegarEssenceInGrams) + " gr"
