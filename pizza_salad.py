@@ -1,18 +1,6 @@
 # Converted for the recipe https://www.kokaihop.se/recept/pizzasallad-5
 
-# Running with flask
-# $ python3 -m venv pizza_env
-# $ source pizza_env/bin/activate   
-# $ export FLASK_APP=pizza-salad
-# $ export FLASK_ENV=development
-# $ flask run
-# example URL for running with flask locally: http://127.0.0.1:5000/?weight=1000&concentration=0.07
-
 import sys
-from flask import Flask
-from flask import request
-
-app = Flask(__name__)
 
 class BaseAmount:
    CABBAGE_IN_GRAMS=100
@@ -39,10 +27,7 @@ class Measurements:
           return (amountInMl/Measurements.TSK[1], Measurements.TSK[2])
       return (amountInMl/Measurements.MSK[0], Measurements.MSK[1])
 
-@app.route('/')
-def main():
-    weight = request.args.get('weight')
-    concentration = request.args.get('concentration')
+def getReceipe(weight, concentration):
     cabbageInGrams=int(weight)
     vinegarEssenceConcentration=float(concentration)
 
@@ -64,4 +49,4 @@ def main():
     return ''
     
 if __name__ == "__main__":
-    main()
+    getReceipe()
