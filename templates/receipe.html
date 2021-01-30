@@ -2,17 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Pizza Salad Converter</title>
+    <title>Pizzasallad</title>
 </head>
 <body>
-  <h1>How to make the perfect pizza salad</h1>
-  <table>
-{% for key, value in ingredients.items() %}
-   <tr>
+  <h1>Recept på pizzasallad</h1>
+    <p>
+    Receptet är hämtat från https://www.kokaihop.se/recept/pizzasallad-5
+  </p>
+  <table border="5"  width="50%"   cellpadding="4" cellspacing="3">
+    <tr>
+      <th colspan="2"><br><h3>Ingredienser</h3>
+      </th>
+    {% for key, value in ingredients.items() %}
+    <tr>
         <th> {{ key }} </th>
         <td> {{ value }} </td>
-   </tr>
-{% endfor %}
-</table>
+    </tr>
+    {% endfor %}
+  </table>
+
+  <h3>Gör så här:</h3>
+  <ol>
+    <li>Alla ingredienser ska ha rumstemperatur.</li>
+    <li>Skär vitkålen i fina strimlor med osthyvel. Stocken används ej.</li>
+    <li>Väg upp den strimlade kålen i en jättestor plastbunke (minst femliters). Detta är den vikten du ska använda för att beräkna ingredienserna</li>
+    <li>Blanda en lag av salt, socker, ättikssprit och vatten. Häll lagen över kålen och låt stå en timme i rumstemperatur. Rör om då och då och pressa ner kålen under ytan.</li>
+    <li>Låt kålen rinna av i ett durkslag, men spara lite av lagen.</li>
+    <li>Lägg tillbaka kålen i bunken och blanda med oljan. Strö över salladskrydda och svartpeppar och rör om. Häll till sist i lite av den sparade lagen. 10-15 g per 100 g kål brukar bli bra. Blanda väl, täck med plastfilm och ställ i kylskåp.</li>
+    <li>Nästa dag är salladen färdig att ätas. Den håller sig fräsch länge i kylen, en vecka utan problem.</li>
+  </ol>
 </body>
 </html>

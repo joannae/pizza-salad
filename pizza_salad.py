@@ -29,7 +29,7 @@ class Measurements:
 
 def getReceipe(weight, concentration):
     cabbageInGrams=int(weight)
-    vinegarEssenceConcentration=float(concentration)
+    vinegarEssenceConcentration=float(int(concentration)/100)
 
     proportion= cabbageInGrams/ BaseAmount.CABBAGE_IN_GRAMS
     # Ättiksyra
@@ -37,13 +37,14 @@ def getReceipe(weight, concentration):
     vinegarEssenceInGrams=int(aceticAcid/vinegarEssenceConcentration)
     waterInGrams=int(proportion*BaseAmount.VINEGAR_ESSENCE_IN_GRAMS+proportion*BaseAmount.WATER_IN_GRAMS-vinegarEssenceInGrams)
     ingredients={}
+    ingredients["vitkål"]=weight + " gram"
     ingredients["salt"]=str(proportion*BaseAmount.SALT_IN_ML) + " ml"
     ingredients["socker"]=str(proportion*BaseAmount.SUGER_IN_ML) + " ml"
-    ingredients["ättika"]=str(vinegarEssenceInGrams) + " gr"
+    ingredients["ättika " + concentration +"% "]=str(vinegarEssenceInGrams) + " gr"
     ingredients["vatten"]=str(waterInGrams)+ " gr vatten"
     ingredients["olja"]=str(proportion*BaseAmount.OIL_IN_GRAMS) + " gr"
-    ingredients["italienska salladskryddor"]=str(proportion*BaseAmount.ITALIAN_SPICE_MIX_IN_ML) + " ml"
-    ingredients["peppar"]=str(proportion*BaseAmount.PEPPER_IN_PINCHES)+ " nypor"
+    ingredients["italienska salladskrydda"]=str(proportion*BaseAmount.ITALIAN_SPICE_MIX_IN_ML) + " ml"
+    ingredients["grovmalen svartpeppar"]=str(proportion*BaseAmount.PEPPER_IN_PINCHES)+ " nypor"
     
 #    amount=Measurements.convert_amount(proportion*BaseAmount.SALT_IN_ML)
 #    print(str(amount[0]) + amount[1] + " salt")
