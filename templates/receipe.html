@@ -6,22 +6,13 @@
 </head>
 <body>
   <h1>How to make the perfect pizza salad</h1>
-  <form method="get">
-    <div class="form-group">
-      <label for="weight">Cabbage weight in grams</label>
-        <input type="text" name="weight"
-               placeholder="Cabbage weight" class="form-control"
-               value="{{ request.form['weight'] }}"></input>
-    </div>
-    <div class="form-group">
-      <label for="concentration">Concentration of vinegar essence</label>
-        <input type="text" name="concentration"
-               placeholder="Concentration" class="form-control"
-               value="{{ request.form['concentration'] }}"></input>
-    </div>
-    <div class="form-group">
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </div>
-  </form>
+  <table>
+{% for key, value in ingredients.items() %}
+   <tr>
+        <th> {{ key }} </th>
+        <td> {{ value }} </td>
+   </tr>
+{% endfor %}
+</table>
 </body>
 </html>
