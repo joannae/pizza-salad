@@ -1,0 +1,1 @@
+A simple converter for pizza salad receipe provided in https://www.kokaihop.se/recept/pizzasallad-5>https://www.kokaihop.se/recept/pizzasallad-5
