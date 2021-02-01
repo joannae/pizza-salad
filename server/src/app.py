@@ -6,6 +6,7 @@
 # $ source pizza_env/bin/activate   
 # $ export FLASK_APP=app
 # $ export FLASK_ENV=development
+# $ sudo apt install python3-flask
 # $ flask run
 
 from flask import Flask, render_template, request
