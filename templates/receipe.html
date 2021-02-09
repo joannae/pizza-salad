@@ -21,11 +21,33 @@
     {% endfor %}
   </table>
 
+    <form method="get">
+      <div class="form-group">
+	<p>
+      <label for="weight">Vikt för vitkål i gram: </label>
+        <input type="text" name="weight"
+               placeholder="Vikt kål" class="form-control"
+               value="{{ request.form['weight'] }}"></input>
+	</p>
+    </div>
+      <div class="form-group">
+	<p>
+      <label for="concentration">Koncentration på ättika i procent: </label>
+        <input type="text" name="concentration"
+               placeholder="koncentration" class="form-control"
+               value="{{ request.form['concentration'] }}"></input>
+	</p>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Uppdatera recept</button>
+    </div>
+  </form>
+
   <h3>Gör så här:</h3>
   <ol>
     <li>Alla ingredienser ska ha rumstemperatur.</li>
     <li>Skär vitkålen i fina strimlor med osthyvel. Stocken används ej.</li>
-    <li>Väg upp den strimlade kålen i en jättestor plastbunke (minst femliters). Detta är den vikten du ska använda för att beräkna ingredienserna.</li>
+    <li>Väg upp den strimlade kålen i en jättestor plastbunke (minst femliters). Uppdatera ingredienserna ovan med denna vikten.</li>
     <li>Blanda en lag av salt, socker, ättikssprit och vatten. Häll lagen över kålen och låt stå en timme i rumstemperatur. Rör om då och då och pressa ner kålen under ytan.</li>
     <li>Låt kålen rinna av i ett durkslag, men spara lite av lagen.</li>
     <li>Lägg tillbaka kålen i bunken och blanda med oljan. Strö över salladskrydda och svartpeppar och rör om. Häll till sist i lite av den sparade lagen. 10-15 g per 100 g kål brukar bli bra. Blanda väl, täck med plastfilm och ställ i kylskåp.</li>

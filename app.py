@@ -5,9 +5,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    if(request.args):
-        print(request.args)
-        ingredients=pizza_salad.getReceipe(request.args['weight'], request.args['concentration'])
-        return render_template('receipe.html', ingredients=ingredients)
-    else:
-        return render_template('index.html')
+    weight=request.args['weight'] if request.args and request.args['weight'] else None
+    concentration=request.args['concentration'] if request.args and request.args['concentration'] else None
+    ingredients=pizza_salad.getReceipe(weight, concentration)
+    return render_template('receipe.html', ingredients=ingredients)
+
