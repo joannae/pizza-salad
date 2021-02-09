@@ -25,7 +25,7 @@
       <div class="form-group">
 	<p>
       <label for="weight">Vikt för vitkål i gram: </label>
-        <input type="text" name="weight"
+        <input type="number" name="weight"
                placeholder="Vikt kål" class="form-control"
                value="{{ request.form['weight'] }}"></input>
 	</p>
@@ -33,7 +33,7 @@
       <div class="form-group">
 	<p>
       <label for="concentration">Koncentration på ättika i procent: </label>
-        <input type="text" name="concentration"
+        <input type="number" name="concentration"
                placeholder="koncentration" class="form-control"
                value="{{ request.form['concentration'] }}"></input>
 	</p>
