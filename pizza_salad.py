@@ -40,9 +40,9 @@ def getReceipe(weight, concentration):
     ingredients["vitkål"]=weight + " gr"
     ingredients["salt"]=str(proportion*BaseAmount.SALT_IN_ML) + " ml"
     ingredients["socker"]=str(proportion*BaseAmount.SUGER_IN_ML) + " ml"
-    ingredients["ättika " + concentration +"% "]=str(vinegarEssenceInGrams) + " gr"
+    ingredients["ättika " + concentration +"% "]=str(vinegarEssenceInGrams) + " gr/ml"
     ingredients["vatten"]=str(waterInGrams)+ " gr vatten"
-    ingredients["olja"]=str(proportion*BaseAmount.OIL_IN_GRAMS) + " gr"
+    ingredients["olja"]=str(proportion*BaseAmount.OIL_IN_GRAMS) + " gr (≈ " + str(int(proportion*BaseAmount.OIL_IN_GRAMS*0.9)) + " ml)"
     ingredients["italienska salladskrydda"]=str(proportion*BaseAmount.ITALIAN_SPICE_MIX_IN_ML) + " ml"
     ingredients["grovmalen svartpeppar"]=str(proportion*BaseAmount.PEPPER_IN_PINCHES)+ " nypor"
     
