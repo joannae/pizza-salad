@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pizzasallad</title>
+</head>
+<body>
+  <h1>Recept på pizzasallad</h1>
+  <form method="get">
+    <div class="form-group">
+      <label for="weight">Vikt för vitkål i gram</label>
+        <input type="text" name="weight"
+               placeholder="Vikt kål" class="form-control"
+               value="{{ request.form['weight'] }}"></input>
+    </div>
+    <div class="form-group">
+      <label for="concentration">Koncentration på ättika i procent</label>
+        <input type="text" name="concentration"
+               placeholder="koncentration" class="form-control"
+               value="{{ request.form['concentration'] }}"></input>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+</body>
+</html>
