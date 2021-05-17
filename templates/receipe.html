@@ -1,63 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Pizzasallad</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pizzasallad</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='images/salad.png') }}"/>
+
 </head>
+
 <body>
-  <h1>Recept på pizzasallad</h1>
-    <p>
-    Receptet är hämtat från <a href=https://www.kokaihop.se/recept/pizzasallad-5>https://www.kokaihop.se/recept/pizzasallad-5</a>.
-  </p>
-  <table border="5"  width="50%"   cellpadding="4" cellspacing="3">
-    <tr>
-      <th colspan="2"><br><h3>Ingredienser</h3>
-      </th>
-    {% for key, value in ingredients.items() %}
-    <tr>
-        <th> {{ key }} </th>
-        <td> {{ value }} </td>
-    </tr>
-    {% endfor %}
-  </table>
+  <section class="hero is-primary is-small">
+    <div class="hero-body">
+        
+        <div class="columns">
+          <div class="column is-narrow">
+            <img class="image is-64x64" src="{{ url_for('static', filename='images/salad.png') }}">
+          </div>
+          <div class="column is-narrow">
+            <span class="title"> Recept på pizzasallad</span>
+          </div>
+        </div>
 
-    <form method="get">
-      <div class="form-group">
-	<p>
-      <label for="weight">Vikt för vitkål i gram: </label>
-        <input type="number" name="weight"
-               placeholder="Vikt kål" class="form-control"
-               value="{{ request.form['weight'] }}"></input>
-	</p>
     </div>
-      <div class="form-group">
-	<p>
-      <label for="concentration">Koncentration på ättika i procent: </label>
-        <input type="number" name="concentration"
-               placeholder="koncentration" class="form-control"
-               value="{{ request.form['concentration'] }}"></input>
-	</p>
-    </div>
-    <div class="form-group">
-        <button type="submit" class="btn btn-primary">Uppdatera ingredienser</button>
-    </div>
-  </form>
+  </section>
 
-  <h3>Gör så här:</h3>
-  <ol>
-    <li>Alla ingredienser ska ha rumstemperatur.</li>
-    <li>Skär vitkålen i fina strimlor med osthyvel. Stocken används ej.</li>
-    <li>Väg upp den strimlade kålen i en jättestor plastbunke (minst femliters). Uppdatera ingredienserna ovan med denna vikten.</li>
-    <li>Blanda en lag av salt, socker, ättikssprit och vatten. Häll lagen över kålen och låt stå en timme i rumstemperatur. Rör om då och då och pressa ner kålen under ytan.</li>
-    <li>Låt kålen rinna av i ett durkslag, men spara lite av lagen.</li>
-    <li>Lägg tillbaka kålen i bunken och blanda med oljan. Strö över salladskrydda och svartpeppar och rör om. Häll till sist i lite av den sparade lagen. 10-15 g per 100 g kål brukar bli bra. Blanda väl, täck med plastfilm och ställ i kylskåp.</li>
-    <li>Nästa dag är salladen färdig att ätas. Den håller sig fräsch länge i kylen, en vecka utan problem.</li>
-  </ol>
-</body>
-<br/>
-<footer>
- <p>
-    Källkod: <a href=https://github.com/joannae/pizza-salad>https://github.com/joannae/pizza-salad</a>.
-  </p>
+    <div class="container mb-6 mt-3">
+      <table class="table is-fullwidth is-striped is-hoverable" cellpadding="4" cellspacing="3">
+        <tr>
+          <th colspan="2"><br>
+            <h2 class="subtitle">Ingredienser</h2 >
+          </th>
+          {% for key, value in ingredients.items() %}
+        <tr>
+          <th> {{ key }} </th>
+          <td> {{ value }} </td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+
+    <div class="container mb-6">
+      <form method="get">
+        <div class="field is-normal">
+          <label for="weight" class="label">Vikt för vitkål i gram: </label>
+          <div class="control has-icons-left">
+            <input type="number" style="width: 25%" name="weight" placeholder="Vikt kål" class="input is-primary"
+              value="{{ request.form['weight'] }}">
+              <span class="icon is-left">
+                <i class="fas fa-balance-scale"></i>
+              </span> 
+          </div>
+          </div>
+
+
+          <div class="field is-normal">
+            <label for="concentration" class="label">Koncentration på ättika i procent: </label>
+            <div class="control has-icons-left">
+              <input type="number" style="width: 25%" name="concentration" placeholder="koncentration" class="input is-primary"
+                value="{{ request.form['concentration'] }}">
+                <span class="icon is-left">
+                  <i class="fas fa-percent"></i>
+                </span> 
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="control">
+              <button type="submit" class="button mt-3 is-primary">Uppdatera ingredienser</button>
+            </div>
+          </div>
+      </form>
+    </div>
+
+
+    <div class="container content box mb-6">
+      <h3 class="subtitle">Gör så här:</h3>
+      <ol>
+        <li>Alla ingredienser ska ha rumstemperatur.</li>
+        <li>Skär vitkålen i fina strimlor med osthyvel. Stocken används ej.</li>
+        <li>Väg upp den strimlade kålen i en jättestor plastbunke (minst femliters). Uppdatera ingredienserna ovan med
+          denna
+          vikten.</li>
+        <li>Blanda en lag av salt, socker, ättikssprit och vatten. Häll lagen över kålen och låt stå en timme i
+          rumstemperatur. Rör om då och då och pressa ner kålen under ytan.</li>
+        <li>Låt kålen rinna av i ett durkslag, men spara lite av lagen.</li>
+        <li>Lägg tillbaka kålen i bunken och blanda med oljan. Strö över salladskrydda och svartpeppar och rör om. Häll
+          till
+          sist i lite av den sparade lagen. 10-15 g per 100 g kål brukar bli bra. Blanda väl, täck med plastfilm och
+          ställ i
+          kylskåp.</li>
+        <li>Nästa dag är salladen färdig att ätas. Den håller sig fräsch länge i kylen, en vecka utan problem.</li>
+      </ol>
+    </div>
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        Källkod: <a href=https://github.com/joannae/pizza-salad>https://github.com/joannae/pizza-salad</a>
+      </p>
+      <p>          Receptet från <a
+        href=https://www.kokaihop.se/recept/pizzasallad-5>https://www.kokaihop.se/recept/pizzasallad-5</a></p>
+    </div>
   </footer>
+
+</body>
 </html>
