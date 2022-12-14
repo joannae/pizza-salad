@@ -17,13 +17,9 @@ Save new requirements and commit if any new
 ```
 pip freeze > requirements.txt
 ```
-Deploying from feature branch *mybranch*
-```
-git push heroku mybranch:main
-```
 
 Deploying from master
 ```
-git push heroku master
+vercel --prod
 ```
 
